@@ -26,6 +26,7 @@ public class Principal extends javax.swing.JFrame {
         menu_evento = new javax.swing.JMenu();
         criar_evento = new javax.swing.JMenuItem();
         cadastrar_participante = new javax.swing.JMenuItem();
+        registro_entrada = new javax.swing.JMenuItem();
         gerenciar = new javax.swing.JMenu();
         alunos = new javax.swing.JMenuItem();
         gerenciar_cadastro_geral = new javax.swing.JMenuItem();
@@ -112,6 +113,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         menu_evento.add(cadastrar_participante);
+
+        registro_entrada.setText("Registro Entrada");
+        registro_entrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registro_entradaActionPerformed(evt);
+            }
+        });
+        menu_evento.add(registro_entrada);
 
         Menu_principal.add(menu_evento);
 
@@ -206,7 +215,7 @@ public class Principal extends javax.swing.JFrame {
     private void sairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMousePressed
         int sair =  JOptionPane . showConfirmDialog ( null , " Tem certeza que deseja sair? " , " Atenção! " , JOptionPane . YES_NO_OPTION );
         if (sair ==  JOptionPane . YES_OPTION ) {
-           // Sistema . saída ( 0 );
+        System.exit(0);
         }
     }//GEN-LAST:event_sairMousePressed
 
@@ -244,6 +253,12 @@ public class Principal extends javax.swing.JFrame {
         desktop.add(painel);
     }//GEN-LAST:event_sobreMousePressed
 
+    private void registro_entradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registro_entradaActionPerformed
+        Registro_Entrada painel = new Registro_Entrada();
+        painel.setVisible(true);
+        desktop.add(painel);
+    }//GEN-LAST:event_registro_entradaActionPerformed
+
     
     public static void main(String args[]) {
        
@@ -272,6 +287,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem novo_cadastro;
     private javax.swing.JMenuItem participantes;
     private javax.swing.JMenuItem professores;
+    private javax.swing.JMenuItem registro_entrada;
     private javax.swing.JMenu relatorios;
     private javax.swing.JMenuItem relatorios_alunos;
     private javax.swing.JMenuItem relatorios_cadastro_geral;
