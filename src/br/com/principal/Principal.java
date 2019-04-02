@@ -88,6 +88,11 @@ public class Principal extends javax.swing.JFrame {
         menu_evento.setText("Eventos");
 
         criar_evento.setText("Criar Evento");
+        criar_evento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                criar_eventoActionPerformed(evt);
+            }
+        });
         menu_evento.add(criar_evento);
 
         cadastrar_participante.setText("Cadastrar Participante");
@@ -179,6 +184,12 @@ public class Principal extends javax.swing.JFrame {
            // Sistema . saída ( 0 );
         }
     }//GEN-LAST:event_sairMousePressed
+
+    private void criar_eventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criar_eventoActionPerformed
+        Cadastro_Evento painel = new Cadastro_Evento();
+        painel.setVisible(true);
+        desktop.add(painel);
+    }//GEN-LAST:event_criar_eventoActionPerformed
 
     
     public static void main(String args[]) {

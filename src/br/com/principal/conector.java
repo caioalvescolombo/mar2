@@ -86,6 +86,16 @@ import java.sql.*;
         }
     
     }
+    public void inserirevento(Evento evento){
+    String sql = "insert into tbevento(nomeeve)values(?)";
+        try {
+            stnt = con.prepareStatement(sql);
+            stnt.setString(1,evento.getNome());
+            stnt.execute();
+        } catch (Exception e) {
+        }
+    
+    }
     
 }
 
