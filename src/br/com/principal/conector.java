@@ -4,6 +4,7 @@ import java.sql.*;
     public class conector {
     private Connection con;
     private PreparedStatement stnt;
+    private ResultSet rs;
     private final String USER="root";
     private final String PASS="";
     private final String URL="jdbc:mysql://localhost:3306/mar";
@@ -56,7 +57,7 @@ import java.sql.*;
         try {
             stnt = con.prepareStatement(sql);
             stnt.setString(1,evento.getNome()+"%");
-            stnt.execute();
+            rs=stnt.executeQuery();
         } catch (Exception e) {
         }
     }
