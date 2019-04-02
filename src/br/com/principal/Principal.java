@@ -78,9 +78,19 @@ public class Principal extends javax.swing.JFrame {
         escola_lideres.add(criar_turma);
 
         cadastrar_professor.setText("Cadastrar Professor");
+        cadastrar_professor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrar_professorActionPerformed(evt);
+            }
+        });
         escola_lideres.add(cadastrar_professor);
 
         cadastrar_aluno.setText("Cadastrar Alunos");
+        cadastrar_aluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrar_alunoActionPerformed(evt);
+            }
+        });
         escola_lideres.add(cadastrar_aluno);
 
         Menu_principal.add(escola_lideres);
@@ -96,6 +106,11 @@ public class Principal extends javax.swing.JFrame {
         menu_evento.add(criar_evento);
 
         cadastrar_participante.setText("Cadastrar Participante");
+        cadastrar_participante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrar_participanteActionPerformed(evt);
+            }
+        });
         menu_evento.add(cadastrar_participante);
 
         Menu_principal.add(menu_evento);
@@ -145,6 +160,16 @@ public class Principal extends javax.swing.JFrame {
         Menu_principal.add(relatorios);
 
         sobre.setText("Sobre");
+        sobre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                sobreMousePressed(evt);
+            }
+        });
+        sobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sobreActionPerformed(evt);
+            }
+        });
         Menu_principal.add(sobre);
 
         sair.setText("Sair");
@@ -190,6 +215,34 @@ public class Principal extends javax.swing.JFrame {
         painel.setVisible(true);
         desktop.add(painel);
     }//GEN-LAST:event_criar_eventoActionPerformed
+
+    private void cadastrar_professorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_professorActionPerformed
+        Cadastro_Professor painel = new Cadastro_Professor();
+        painel.setVisible(true);
+        desktop.add(painel);
+    }//GEN-LAST:event_cadastrar_professorActionPerformed
+
+    private void cadastrar_alunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_alunoActionPerformed
+       Cadastro_Alunos painel = new Cadastro_Alunos();
+        painel.setVisible(true);
+        desktop.add(painel);
+    }//GEN-LAST:event_cadastrar_alunoActionPerformed
+
+    private void cadastrar_participanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_participanteActionPerformed
+        Cadastro_Participante painel = new Cadastro_Participante();
+        painel.setVisible(true);
+        desktop.add(painel);
+    }//GEN-LAST:event_cadastrar_participanteActionPerformed
+
+    private void sobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sobreActionPerformed
+
+    private void sobreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobreMousePressed
+        Sobre painel = new Sobre();
+        painel.setVisible(true);
+        desktop.add(painel);
+    }//GEN-LAST:event_sobreMousePressed
 
     
     public static void main(String args[]) {
