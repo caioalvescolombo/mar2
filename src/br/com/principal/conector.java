@@ -50,5 +50,15 @@ import java.sql.*;
     
     }
     
+    
+    public void pesquisaevento(Evento evento){
+    String sql= "select * from tbevento where nomeve like ?";
+        try {
+            stnt = con.prepareStatement(sql);
+            stnt.setString(1,evento.getNome()+"%");
+            stnt.execute();
+        } catch (Exception e) {
+        }
+    }
 }
 

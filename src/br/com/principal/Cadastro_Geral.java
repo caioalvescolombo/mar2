@@ -94,7 +94,7 @@ public class Cadastro_Geral extends javax.swing.JInternalFrame {
         cp_uf.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel10.setText("E-Mail:");
+        jLabel10.setText("* E-Mail:");
 
         cp_mail.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
@@ -143,7 +143,7 @@ public class Cadastro_Geral extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cp_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(10, 10, 10)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cp_mail))
@@ -204,27 +204,36 @@ public class Cadastro_Geral extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cp_empresaActionPerformed
 
     private void cadastrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMousePressed
-        Geral geral = new Geral();
-        geral.setNome(cp_nome.getText());
-        geral.setBairro(cp_bairro.getText());
-        geral.setCidade(cp_cidade.getText());
-        geral.setCpf(Double.parseDouble(cp_cpf.getText()));
-        geral.setEmail(cp_mail.getText());
-        geral.setEmpresa(cp_empresa.getSelectedItem().toString());
-        geral.setEndereco(cp_endereco.getText());
-        geral.setMembro(cp_membro.getSelectedItem().toString());
-        geral.setUf(cp_uf.getText());
-        geral.setTelefone(Double.parseDouble(cp_telefone.getText()));
-        conexao.inserirgeral(geral);
-        JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso!");
-        cp_nome.setText(null);
-        cp_bairro.setText(null);
-        cp_cidade.setText(null);
-        cp_cpf.setText(null);
-        cp_mail.setText(null);
-        cp_endereco.setText(null);
-        cp_uf.setText(null);
-        cp_telefone.setText(null);
+            
+        
+        if(cp_nome.getText().isEmpty()|| cp_bairro.getText().isEmpty()|| cp_cidade.getText().isEmpty()|| cp_cpf.getText().isEmpty()|| cp_endereco.getText().isEmpty()|| cp_uf.getText().isEmpty()||cp_telefone.getText().isEmpty()|| cp_mail.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Dados incompletos!!");
+        }else{
+            Geral geral = new Geral();
+            geral.setNome(cp_nome.getText());
+            geral.setBairro(cp_bairro.getText());
+            geral.setCidade(cp_cidade.getText());
+            geral.setCpf(Double.parseDouble(cp_cpf.getText()));
+            geral.setEmail(cp_mail.getText());
+            geral.setEmpresa(cp_empresa.getSelectedItem().toString());
+            geral.setEndereco(cp_endereco.getText());
+            geral.setMembro(cp_membro.getSelectedItem().toString());
+            geral.setUf(cp_uf.getText());
+            geral.setTelefone(Double.parseDouble(cp_telefone.getText()));
+            conexao.inserirgeral(geral);
+            JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso!");
+            cp_nome.setText(null);
+            cp_bairro.setText(null);
+            cp_cidade.setText(null);
+            cp_cpf.setText(null);
+            cp_mail.setText(null);
+            cp_endereco.setText(null);
+            cp_uf.setText(null);
+            cp_telefone.setText(null);
+        
+        }
+        
+        
     }//GEN-LAST:event_cadastrarMousePressed
 
 

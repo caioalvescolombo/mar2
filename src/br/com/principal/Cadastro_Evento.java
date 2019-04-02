@@ -63,11 +63,20 @@ public class Cadastro_Evento extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        Evento evento = new Evento();
-        evento.setNome(cp_evento.getText());
-        conexao.inserirevento(evento);
-        JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso!");
-        cp_evento.setText(null);
+        if(cp_evento.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Inserir nome do Evento!");
+        }
+        else{
+            Evento evento = new Evento();
+            evento.setNome(cp_evento.getText());
+            conexao.inserirevento(evento);
+            JOptionPane.showMessageDialog(null,"Cadastro Realizado com Sucesso!");
+            cp_evento.setText(null);
+        }
+                
+                
+        
+        
     }//GEN-LAST:event_jButton1MousePressed
 
 
