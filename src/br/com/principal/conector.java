@@ -1,6 +1,8 @@
 
 package br.com.principal;
 import java.sql.*;
+
+import net.proteanit.sql.DbUtils;
     public class conector {
     private Connection con;
     private PreparedStatement stnt;
@@ -50,16 +52,5 @@ import java.sql.*;
         }
     
     }
-    
-    
-    public void pesquisaevento(Evento evento){
-    String sql= "select * from tbevento where nomeve like ?";
-        try {
-            stnt = con.prepareStatement(sql);
-            stnt.setString(1,evento.getNome()+"%");
-            rs=stnt.executeQuery();
-        } catch (Exception e) {
-        }
     }
-}
 
