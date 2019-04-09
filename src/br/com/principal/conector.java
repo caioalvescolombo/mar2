@@ -52,5 +52,16 @@ import net.proteanit.sql.DbUtils;
         }
     
     }
+    public void inserirparticipante(Geral geral , Evento evento){
+    String sql = "insert into tbparticipantes(id,ideve)values(?,?)";
+        try {
+            stnt = con.prepareStatement(sql);
+            stnt.setInt(1,geral.getIdgeral());
+            stnt.setInt(2,evento.getIdvento());
+            stnt.execute();
+        } catch (Exception e) {
+        }
+    
+    }    
     }
 
