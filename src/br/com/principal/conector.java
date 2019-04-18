@@ -63,5 +63,17 @@ import net.proteanit.sql.DbUtils;
         }
     //teste
     }    
+    
+    public void inserirprofessor(Geral geral){
+    String sql = "insert into tbprofessor (id) values(?)";
+        try {
+            stnt= con.prepareStatement(sql);
+            stnt.setInt(1,geral.getIdgeral());
+            stnt.execute();
+            
+        } catch (Exception e) {
+        }
+    
+    }
     }
 
